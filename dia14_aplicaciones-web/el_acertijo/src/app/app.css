@@ -1,0 +1,15 @@
+.wrapper{
+    /*background-color: red;*/
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*padding-left: 5rem;*/
+    
+}
+.header{
+    width: 100%;
+    border-bottom: 2px solid gray;
+    text-align: center;
+}

@@ -1,0 +1,18 @@
+<div class="contenedor">
+    <img src="imagen.png" alt="">
+    <p>Elije un numero del 1 al 10</p>
+    <form  #formUser="ngForm" (ngSubmit)="cargarDato(formUser)">
+        <input 
+            id="entrada" 
+            name="entrada" 
+            type="number" 
+            max="10" 
+            min="1" 
+            placeholder="Ingresa tu apuesta" 
+            ngModel 
+            (keydown)="controlDeNumeros($event)">
+        <button id="adivinar" type="submit">Adivinar</button>
+    </form>
+    
+</div>
+
