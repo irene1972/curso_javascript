@@ -1,0 +1,11 @@
+*{
+  box-sizing: border-box;
+}
+.mayor{
+  background-color: green;
+  color:white;
+}
+.menor{
+  background-color: red;
+  color:white;
+}

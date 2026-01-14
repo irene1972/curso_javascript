@@ -1,0 +1,15 @@
+*{
+  box-sizing: border-box;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.oculto{
+  display: none;
+}
+#lista{
+  list-style-type: none;
+}
