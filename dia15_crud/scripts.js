@@ -8,7 +8,6 @@
             console.log(data.dispositivos);
             const tbody=document.querySelector('#tbody');
 
-            let div;
             for(let dispositivo of data.dispositivos){
                 const tr=document.createElement('tr');
 
@@ -40,6 +39,47 @@
             
         })
         .catch(error=>console.log(error));
+
+        const botonCrear=document.querySelector('#crear');
+        botonCrear.addEventListener('click',crear);
+    }
+    function crear(){
+        const nombreInput=document.querySelector('#nombre');
+        const modeloInput=document.querySelector('#modelo');
+        const colorInput=document.querySelector('#color');
+        const almacenamientoInput=document.querySelector('#almacenamiento');
+        const procesadorInput=document.querySelector('#procesador');
+
+        const nombre=nombreInput.value;
+        const modelo=modeloInput.value;
+        const color=colorInput.value;
+        const almacenamiento=almacenamientoInput.value;
+        const procesador=procesadorInput.value;
+
+        if(!nombre | !modelo | !color | !almacenamiento | !procesador){
+            alert('Todos los campos deben estar cumplimentados');
+            return;
+        }
+
+        fetch('https://my-json-server.typicode.com/fedegaray/telefonos/dispositivos',{
+            method:'POST',
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body:JSON.stringify({
+                marca:nombre,
+                modelo:modelo,
+                color:color,
+                almacenamiento:almacenamiento,
+                procesador:procesador
+            })
+        })
+        .then(response=>response.json())
+        .then(data=>{
+            console.log('Registro creado: ',data);
+            alert(`marca: ${data.marca}-modelo: ${data.modelo}-color: ${data.color}-almacenamiento: ${data.almacenamiento}-procesador: ${data.procesador}`);
+        })
+        .catch(error=>console.log(error)); 
     }
     function construirBoton(texto){
         const tdBoton=document.createElement('td');
