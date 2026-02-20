@@ -1,0 +1,19 @@
+<div class="flex">
+    <div>
+        <div>
+            <input type="text" placeholder="Introduce tu nombre" [(ngModel)]="hobby.nombre">
+        </div>
+        <div>
+            <input type="text" placeholder="Introduce tu hobby" [(ngModel)]="hobby.hobby">
+        </div>
+        <button (click)="enviarDatos()">Enviar</button>
+    </div>
+    <div>
+        <ul>
+            @for(hobby of arrayHobbies; track hobby.nombre){
+                <li>{{hobby.nombre}} - {{hobby.hobby}}</li>
+            }
+            
+        </ul>
+    </div>
+</div>
